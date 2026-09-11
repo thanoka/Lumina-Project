@@ -1,0 +1,142 @@
+[
+  {
+    "HospitalName": "โรงพยาบาลตัวอย่าง",
+    "FloorPlan": [
+    {
+      "id": "node_1",
+    "name": "Entrance Hall",
+    "type": "place",
+    "neighbors": [
+      {
+        "target_id": "node_2",
+        "direction": "forward",
+        "distance_approx": "10 steps",
+        "path_type": "corridor"
+      }
+    ],
+    "reference-point": [
+      { "object_name": "sign", "text_content": "WELCOME", "priority": 1, "location_in_frame": "center" }
+    ],
+    "parameter_item": [
+      { "object_name": "chair", "count": "2 unit", "description": "Waiting chairs" }
+    ],
+    "instruction_on_arrival": "You are at the entrance hall.",
+    "mtype": "lobby"
+  },
+  {
+    "id": "node_2",
+    "name": "Central Junction",
+    "type": "turn_point",
+    "neighbors": [
+      {
+        "target_id": "node_1",
+        "direction": "backward",
+        "distance_approx": "10 steps",
+        "path_type": "corridor"
+      },
+      {
+        "target_id": "node_3",
+        "direction": "left",
+        "distance_approx": "5 steps",
+        "path_type": "doorway",
+        "turn_ref": {
+          "object_name": "sign",
+          "text_content": "ROOM A",
+          "warn_at": 0.2,
+          "turn_at": 0.4
+        }
+      },
+      {
+        "target_id": "node_4",
+        "direction": "right",
+        "distance_approx": "8 steps",
+        "path_type": "corridor",
+        "turn_ref": {
+          "object_name": "sign",
+          "text_content": "EXIT",
+          "warn_at": 0.2,
+          "turn_at": 0.4
+        }
+      }
+    ],
+    "reference-point": [
+      { "object_name": "clock", "priority": 1, "location_in_frame": "center" }
+    ],
+    "parameter_item": [
+      { "object_name": "potted plant", "count": "1 unit" }
+    ],
+    "instruction_on_arrival": "You are at the central junction.",
+    "mtype": "junction"
+  },
+  {
+    "id": "node_3",
+    "name": "Room A",
+    "type": "place",
+    "neighbors": [
+      {
+        "target_id": "node_2",
+        "direction": "backward",
+        "distance_approx": "5 steps",
+        "path_type": "doorway"
+      }
+    ],
+    "reference-point": [
+      { "object_name": "desk", "priority": 1, "location_in_frame": "center" }
+    ],
+    "parameter_item": [
+      { "object_name": "laptop", "count": "1 unit" }
+    ],
+    "instruction_on_arrival": "You have reached Room A. This is a dead end.",
+    "mtype": "office"
+  },
+  {
+    "id": "node_4",
+    "name": "East Corridor",
+    "type": "hall",
+    "neighbors": [
+      {
+        "target_id": "node_2",
+        "direction": "backward",
+        "distance_approx": "8 steps",
+        "path_type": "corridor"
+      },
+      {
+        "target_id": "node_5",
+        "direction": "forward",
+        "distance_approx": "12 steps",
+        "path_type": "corridor"
+      }
+    ],
+    "reference-point": [
+      { "object_name": "fire hydrant", "priority": 1, "location_in_frame": "right" }
+    ],
+    "parameter_item": [
+      { "object_name": "sign", "text_content": "FIRE EXIT", "count": "1 unit" }
+    ],
+    "instruction_on_arrival": "Walking through the East Corridor.",
+    "mtype": "hallway"
+  },
+  {
+    "id": "node_5",
+    "name": "Final Office",
+    "type": "place",
+    "neighbors": [
+      {
+        "target_id": "node_4",
+        "direction": "backward",
+        "distance_approx": "12 steps",
+        "path_type": "corridor"
+      }
+    ],
+    "reference-point": [
+      { "object_name": "window", "priority": 1, "location_in_frame": "center" }
+    ],
+    "parameter_item": [
+      { "object_name": "bookshelf", "count": "1 unit" }
+    ],
+    "instruction_on_arrival": "You have reached the Final Office. This is a dead end.",
+    "mtype": "office"
+    }
+    ]
+  }
+]

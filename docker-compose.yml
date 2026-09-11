@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  ai_service:
+    build:
+      context: ./backend/ai_service
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+    env_file:
+      - ./backend/ai_service/.env
+    restart: unless-stopped
+
+  stt_service:
+    build:
+      context: ./backend/stt_service
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
+  vision_service:
+    build:
+      context: ./backend/vision_service
+    ports:
+      - "7000:7000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8081:8081"
+    environment:
+      - EXPO_PUBLIC_URL_3000=http://localhost:3000
+      - EXPO_PUBLIC_URL_5000=http://localhost:5000
+      - EXPO_PUBLIC_URL_7000=http://localhost:7000
+    restart: unless-stopped
+    depends_on:
+      - ai_service
+      - stt_service
+      - vision_service

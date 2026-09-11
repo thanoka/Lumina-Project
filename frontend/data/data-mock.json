@@ -1,0 +1,330 @@
+[
+  {
+    "HospitalName": "โรงพยาบาลกรุงเทพ",
+    "FloorPlan": [
+      {
+        "id": "GF_Main_Entrance",
+        "name": "ทางเข้าหลัก",
+        "type": "place",
+        "neighbors": [
+          {
+            "target_id": "GF_Registration",
+            "direction": "left",
+            "distance_approx": "15 ก้าว",
+            "path_type": "open_foyer",
+            "turn_ref": {
+              "object_name": "sign",
+              "text_content": "REGISTRATION & ADMISSION",
+              "warn_at": 0.20,
+              "turn_at": 0.30,
+              "description": "Registration desk sign — when it fills frame, turn left"
+            }
+          },
+          {
+            "target_id": "GF_Screening",
+            "direction": "right",
+            "distance_approx": "15 ก้าว",
+            "path_type": "open_foyer",
+            "turn_ref": {
+              "object_name": "sign",
+              "text_content": "VITAL SIGNS CHECK",
+              "warn_at": 0.20,
+              "turn_at": 0.30,
+              "description": "Screening area sign — when it fills frame, turn right"
+            }
+          },
+          {
+            "target_id": "GF_Central_Hall",
+            "direction": "forward",
+            "distance_approx": "20 ก้าว",
+            "path_type": "open_hall"
+          }
+        ],
+        "reference-point": [
+          {
+            "object_name": "sign",
+            "text_content": "MAIN ENTRANCE",
+            "priority": 1,
+            "location_in_frame": "center"
+          },
+          {
+            "object_name": "tv",
+            "priority": 2,
+            "description": "Wall-mounted Information Display",
+            "location_in_frame": "center"
+          },
+          {
+            "object_name": "bench",
+            "priority": 3,
+            "description": "Fixed heavy stone bench",
+            "location_in_frame": "left"
+          }
+        ],
+        "parameter_item": [
+          {
+            "object_name": "potted plant",
+            "count": "4 unit",
+            "description": "Large fixed floor planters"
+          },
+          {
+            "object_name": "chair",
+            "count": "10 unit",
+            "description": "Fixed metal waiting chairs"
+          },
+          {
+            "object_name": "sign",
+            "text_content": "PULL TO OPEN",
+            "count": "2 unit",
+            "description": "Door handle signs"
+          },
+          {
+            "object_name": "clock",
+            "count": "1 unit",
+            "description": "Wall clock above entrance"
+          }
+        ],
+        "instruction_on_arrival": "You have reached the Main Entrance lobby.",
+        "mtype": "high_ceiling_lobby"
+      },
+      {
+        "id": "GF_Central_Hall",
+        "name": "ห้องโถงที่ 1",
+        "type": "hall",
+        "neighbors": [
+          {
+            "target_id": "GF_Main_Entrance",
+            "direction": "backward",
+            "distance_approx": "20 ก้าว",
+            "path_type": "open_hall"
+          },
+          {
+            "target_id": "GF_Restrooms",
+            "direction": "forward",
+            "distance_approx": "25 ก้าว",
+            "path_type": "corridor"
+          }
+        ],
+        "reference-point": [
+          {
+            "object_name": "sign",
+            "text_content": "NORTH WING ACCESS",
+            "priority": 1,
+            "location_in_frame": "center"
+          },
+          {
+            "object_name": "fire hydrant",
+            "priority": 2,
+            "description": "Wall-recessed fire station",
+            "location_in_frame": "right"
+          },
+          {
+            "object_name": "clock",
+            "priority": 3,
+            "location_in_frame": "center"
+          }
+        ],
+        "parameter_item": [
+          {
+            "object_name": "chair",
+            "count": "40 unit",
+            "description": "Bolted row seating"
+          },
+          {
+            "object_name": "potted plant",
+            "count": "6 unit"
+          },
+          {
+            "object_name": "sign",
+            "text_content": "EXIT",
+            "count": "4 unit",
+            "description": "Ceiling mounted emergency signs"
+          },
+          {
+            "object_name": "tv",
+            "count": "2 unit",
+            "description": "Ceiling mounted hallway monitors"
+          }
+        ],
+        "instruction_on_arrival": "Passing through the Central Hallway.",
+        "mtype": "transition_zone"
+      },
+      {
+        "id": "GF_Registration",
+        "name": "จุดลงทะเบียน",
+        "type": "place",
+        "neighbors": [
+          {
+            "target_id": "GF_Main_Entrance",
+            "direction": "right",
+            "distance_approx": "15 ก้าว",
+            "path_type": "open_foyer",
+            "turn_ref": {
+              "object_name": "sign",
+              "text_content": "MAIN ENTRANCE",
+              "warn_at": 0.20,
+              "turn_at": 0.30,
+              "description": "Main Entrance sign — when it fills frame, turn right to exit"
+            }
+          }
+        ],
+        "reference-point": [
+          {
+            "object_name": "sign",
+            "text_content": "REGISTRATION & ADMISSION",
+            "priority": 1,
+            "location_in_frame": "center"
+          },
+          {
+            "object_name": "monitor",
+            "priority": 2,
+            "description": "Fixed desktop monitor",
+            "location_in_frame": "center"
+          },
+          {
+            "object_name": "keyboard",
+            "priority": 3,
+            "location_in_frame": "left"
+          }
+        ],
+        "parameter_item": [
+          {
+            "object_name": "tv",
+            "count": "3 unit",
+            "description": "Queue status displays"
+          },
+          {
+            "object_name": "chair",
+            "count": "12 unit",
+            "description": "Fixed desk-side chairs"
+          },
+          {
+            "object_name": "laptop",
+            "count": "4 unit",
+            "description": "Fixed staff terminals"
+          },
+          {
+            "object_name": "mouse",
+            "count": "4 unit"
+          }
+        ],
+        "instruction_on_arrival": "Registration is directly in front of you.",
+        "mtype": "administrative_desk"
+      },
+      {
+        "id": "GF_Screening",
+        "name": "จุดคัดกรอง",
+        "type": "place",
+        "neighbors": [
+          {
+            "target_id": "GF_Main_Entrance",
+            "direction": "left",
+            "distance_approx": "15 ก้าว",
+            "path_type": "open_foyer",
+            "turn_ref": {
+              "object_name": "sign",
+              "text_content": "MAIN ENTRANCE",
+              "warn_at": 0.20,
+              "turn_at": 0.30,
+              "description": "Main Entrance sign — when it fills frame, turn left to exit"
+            }
+          }
+        ],
+        "reference-point": [
+          {
+            "object_name": "sign",
+            "text_content": "VITAL SIGNS CHECK",
+            "priority": 1,
+            "location_in_frame": "center"
+          },
+          {
+            "object_name": "refrigerator",
+            "priority": 2,
+            "description": "Medication fridge",
+            "location_in_frame": "left"
+          },
+          {
+            "object_name": "microwave",
+            "priority": 3,
+            "description": "Staff break area microwave",
+            "location_in_frame": "right"
+          }
+        ],
+        "parameter_item": [
+          {
+            "object_name": "dining table",
+            "count": "4 unit",
+            "description": "Heavy screening workstations"
+          },
+          {
+            "object_name": "chair",
+            "count": "20 unit"
+          },
+          {
+            "object_name": "tv",
+            "count": "1 unit"
+          },
+          {
+            "object_name": "sink",
+            "count": "1 unit",
+            "description": "Staff handwash station"
+          }
+        ],
+        "instruction_on_arrival": "You are at the Screening area.",
+        "mtype": "checkup_point"
+      },
+      {
+        "id": "GF_Restrooms",
+        "name": "ห้องน้ำสาธารณะ",
+        "type": "end",
+        "neighbors": [
+          {
+            "target_id": "GF_Central_Hall",
+            "direction": "backward",
+            "distance_approx": "25 ก้าว",
+            "path_type": "corridor"
+          }
+        ],
+        "reference-point": [
+          {
+            "object_name": "sign",
+            "text_content": "TOILETS",
+            "priority": 1,
+            "location_in_frame": "center"
+          },
+          {
+            "object_name": "sink",
+            "priority": 2,
+            "description": "Wall-mounted ceramic sink",
+            "location_in_frame": "center"
+          },
+          {
+            "object_name": "toilet",
+            "priority": 3,
+            "location_in_frame": "left"
+          }
+        ],
+        "parameter_item": [
+          {
+            "object_name": "sink",
+            "count": "4 unit"
+          },
+          {
+            "object_name": "toilet",
+            "count": "4 unit"
+          },
+          {
+            "object_name": "sign",
+            "text_content": "WASH YOUR HANDS",
+            "count": "4 unit"
+          },
+          {
+            "object_name": "potted plant",
+            "count": "1 unit"
+          }
+        ],
+        "instruction_on_arrival": "You have reached the restrooms.",
+        "mtype": "amenity_node"
+      }
+    ]
+  }
+]
