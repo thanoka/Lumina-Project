@@ -1,4 +1,4 @@
-# M-Project — "Lumi" AI Indoor Navigation Assistant for Blind Users
+# Lumina-Project — "Lumi" AI Indoor Navigation Assistant for Blind Users
 
 > A camera-first, voice-only indoor navigation assistant that guides visually impaired users through hospitals and other complex public buildings — using YOLO object detection, Google Vision OCR, a graph-based route planner, and an LLM that turns structured navigation events into warm, natural Thai speech.
 
